@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RockPaperScissors</title>
+    <link rel="stylesheet" href="ExternalCSS.CSS" />
+</head>
+<body>
+    <div style="font-weight: bold;">Rock, Paper, Scissors!</div>
+    <script>
+        //get computer choice using the .random function
+function computerPlay () {
+let compchoice = ['rock', 'paper', 'scissors'];
+return compchoice[Math.floor(Math.random() * 
+compchoice.length)];
+}
+    //code to determine the winner of every possible iteration
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        return 'You chose ' + playerSelection + '.' + ' You win!';
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        return 'You chose ' + playerSelection + '.' + ' You win!';
+    } else if (playerSelection === 'sissors' && computerSelection === 'paper') {
+        return 'You chose ' + playerSelection + '.' + ' You win!';
+    } else if (computerSelection === 'rock' && playerSelection === 'scissors') {
+        return 'Computer chose ' + computerSelection + '.' + 'You lose!';
+    } else if (computerSelection === 'paper' && playerSelection === 'rock') {
+        return 'Computer chose ' + computerSelection + '.' + 'You lose!';
+    } else if (computerSelection === 'scissors' && playerSelection === 'paper') {
+        return 'Computer chose ' + computerSelection + '.' + 'You lose!';
+    } else if (computerSelection === playerSelection) {
+        return 'Its a draw!';
+    } else {
+        return 'Please choose Rock, Paper, or Scissors';
+    }
+}
+//code to find the winner of each round consisting of 5 games
+function game(){
+let userwin = 0;
+let computerwin=0;
+let result;
+for (i=0; i<=5; i++)
+var person = prompt("Do you choose rock, paper or scissors?");
+let playerSelection = person.toLowerCase();
+let computerSelection = computerPlay();
+console.log("Computer chooses: " + computerSelection);
+let result = console.log(alert(playRound(playerSelection, computerSelection)));
+if (result.includes("win")){
+    userwin++
+} else if (result.includes("lose")){
+    computerwin++
+}
+if (userwin>computerwin){
+    result = "You win";
+    return result;
+} else if (computerwin>userwin){
+    result = "You lose";
+    return result
+}
+}
+console.log(game())
+
+</script>
+</body>
+</html>
